@@ -22,7 +22,11 @@ Domenica 8 nov e ogni inizio mese: storia "bilancio del mese" con statistiche RE
 2. **Usa le foto reali dei flaconi** (`products/*.png`, ritagli 1 L/lattina, mai multipack) con `tools/photo_lib.py` (`hero`, `split`, `bigspec`, `duo`, `lineup`, `text_slide`; feed 1080x1350, storia H=1920) e `tools/reel_lib.py` (Reel con ffmpeg). Varia i layout: mai due schede uguali di fila. Solo testo = solo per consigli/servizio. Le foto si rigenerano da Shopify con `tools/photos.py`. Vecchi template: `tools/cal_lib.py` (`slide()`, `story()`, `add_brt()`), vedi `tools/gen_calendar.py` come esempio; schede prodotto: `tools/product_card.py`. Per le immagini usa solo i font/logo in `assets/`. Salva in `media/<anno-mese>/`.
 3. `git add -A && git commit && git push` (il push deve riuscire PRIMA di programmare: Metricool legge i file da `https://raw.githubusercontent.com/autoevoricambi-afk/autoevostore-social/main/<percorso>`).
 4. Programma con `createScheduledPost` (blogId 7275875): providers facebook+instagram; `facebookData.type` / `instagramData.type` = `POST` o `STORY` (storia: `text` vuoto); `publicationDate` in Europe/Rome; `mediaAltText` per ogni immagine; carosello = più URL in `media`.
-5. Verifica con `getScheduledPosts` che ogni giorno abbia il suo contenuto; annota in `data/ledger.md` cosa hai usato (prodotto/tema) per non ripetere entro 8 settimane.
+5. Controllo qualità: salva l'output di `getScheduledPosts` in JSON e lancia `python3 tools/qc.py file.json` (prezzi, 'sostituzione gratuita', Selenia 0W-20, chiusura caption, alt text, bozze, provider): deve dare 0 problemi. Poi verifica con `getScheduledPosts` che ogni giorno abbia il suo contenuto; annota in `data/ledger.md` cosa hai usato (prodotto/tema) per non ripetere entro 8 settimane.
 6. Alla fine riassumi in 3 righe cosa hai programmato e se qualcosa non ha funzionato.
 
 Prodotti già usati in post (ottobre-novembre 2026): Petronas Syntium Prime XS/AV, Castrol EDGE LongLife III 5W-30, Mannol ATF/8118, Mobil 1 ESP 5W-30, Castrol EDGE 0W-20 C5, Total Quartz Ineo MC3, BMW TwinPower Turbo LL-04. Temi usati: vedi `data/calendar_2026-10.json`.
+
+
+## Repo pubblico (scelta voluta)
+Il repo resta PUBBLICO perché Metricool legge le immagini/video da raw.githubusercontent.com (da privato non funzionerebbe). Quindi: mai dati clienti, ordini, prezzi, fatture, token o chiavi nel repo; solo grafiche, template e calendario.

@@ -10,14 +10,16 @@ Archivio di lavoro per i social di AUTO EVO STORE (autoevostore.it, solo oli e l
 - Non toccare eBay. Non attivare prodotti in bozza su Shopify. Non scrivere "sostituzione gratuita".
 - Se un fatto tecnico non è verificabile da titolo/tag Shopify o da fonte ufficiale, NON scriverlo.
 
-## Ritmo giornaliero (1 feed + 1 storia al giorno, tutti i giorni)
+## Ritmo (analisi Metricool 9 ott): ogni giorno 1 feed + 2 momenti storie (12:30 e 18:30, sequenze di 3-4 storie: problema, spiegazione, prodotto, CTA DM). A settimana: 3 Reel, 2 caroselli educativi, 1 contenuto di fiducia. Pilastri: educazione, fiducia, prodotto, conversione. Mai affermare compatibilità dalla sola viscosità: citare l'omologazione e invitare a mandare targa/modello/anno in DM.
+
+## Ritmo di base (1 feed + 1 storia al giorno, tutti i giorni)
 Feed 18:30 (sabato 12:00): lun/gio prodotto (scheda), mar consiglio (carosello 5 slide), mer carosello/spec, ven reel, sab fiducia, dom domanda.
 Storie 12:30: a rotazione "Lo sapevi?", servizio (BRT/reso/assistenza/Europa), marchio.
 Domenica 8 nov e ogni inizio mese: storia "bilancio del mese" con statistiche REALI di Metricool.
 
 ## Come si fa
 1. `git pull`; guarda `data/calendar_*.json` e `getScheduledPosts` (Metricool) per trovare il primo giorno senza contenuto: coprire sempre almeno i prossimi 14 giorni.
-2. Genera le grafiche con `tools/cal_lib.py` (`slide()`, `story()`, `add_brt()`), vedi `tools/gen_calendar.py` come esempio; schede prodotto: `tools/product_card.py`. Per le immagini usa solo i font/logo in `assets/`. Salva in `media/<anno-mese>/`.
+2. **Usa le foto reali dei flaconi** (`products/*.png`, ritagli 1 L/lattina, mai multipack) con `tools/photo_lib.py` (`hero`, `split`, `bigspec`, `duo`, `lineup`, `text_slide`; feed 1080x1350, storia H=1920) e `tools/reel_lib.py` (Reel con ffmpeg). Varia i layout: mai due schede uguali di fila. Solo testo = solo per consigli/servizio. Le foto si rigenerano da Shopify con `tools/photos.py`. Vecchi template: `tools/cal_lib.py` (`slide()`, `story()`, `add_brt()`), vedi `tools/gen_calendar.py` come esempio; schede prodotto: `tools/product_card.py`. Per le immagini usa solo i font/logo in `assets/`. Salva in `media/<anno-mese>/`.
 3. `git add -A && git commit && git push` (il push deve riuscire PRIMA di programmare: Metricool legge i file da `https://raw.githubusercontent.com/autoevoricambi-afk/autoevostore-social/main/<percorso>`).
 4. Programma con `createScheduledPost` (blogId 7275875): providers facebook+instagram; `facebookData.type` / `instagramData.type` = `POST` o `STORY` (storia: `text` vuoto); `publicationDate` in Europe/Rome; `mediaAltText` per ogni immagine; carosello = più URL in `media`.
 5. Verifica con `getScheduledPosts` che ogni giorno abbia il suo contenuto; annota in `data/ledger.md` cosa hai usato (prodotto/tema) per non ripetere entro 8 settimane.

@@ -1,7 +1,9 @@
 import numpy as np, random
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
-F='/usr/share/fonts/truetype/google-fonts/Poppins-%s.ttf'
-LOGO='/root/.claude/uploads/d41cb8f8-1b90-58b3-b78b-d998302e62d1/a4af1917-image.png'
+import os
+ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+F=ROOT+'/assets/fonts/Poppins-%s.ttf'
+LOGO=ROOT+'/assets/logo.png'
 CY=(0,200,230)
 def font(w,s): return ImageFont.truetype(F%w,s)
 def background(W,H,glows=((0.5,0.5,0.5,0.4,0.22),),seed=7,floor=None):

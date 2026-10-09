@@ -19,7 +19,7 @@ save(text_slide('Scrivici in DM',['Targa + modello','+ anno.'],body='Verifichiam
 save(hero('petronas_xs_5w30','Petronas Syntium Prime XS',['5W-30'],chips=('ACEA C3','dexos2 / dexos D','API SN')),O+'prod14_xs.jpg')
 save(split('mobil1_esp_5w30','Mobil 1',['ESP','5W-30'],['Olio motore sintetico','ACEA C3','BMW LL-04','MB 229.52','VW 504.00 / 507.00']),O+'prod15_mobil.jpg')
 save(bigspec('castrol_edge_ll3_5w30','5W-30','Castrol EDGE Professional',['LongLife III'],chips=('ACEA C3','VW 504.00/507.00','MB 229.52')),O+'prod19_castrol.jpg')
-save(bigspec('castrol_edge_0w20_c5','0W-20','Castrol EDGE',['Hybrid ready: C5'],chips=('ACEA C5/C6','dexos1 Gen 3','MB 229.71'),fonts=56),O+'prod22_c5.jpg')
+save(bigspec('castrol_edge_0w20_c5','0W-20','Castrol EDGE',['C5'],chips=('ACEA C5/C6','dexos1 Gen 3','MB 229.71'),fonts=70),O+'prod22_c5.jpg')
 save(hero('mannol_atf_dexron3','MANNOL Automatic Plus ATF',['Dexron III'],chips=('Cambi automatici','Servosterzo','TO-2')),O+'prod26_atf.jpg')
 save(bigspec('total_ineo_mc3','5W-30','TotalEnergies Quartz',['Ineo MC3'],chips=('ACEA C3','API SN PLUS','Low SAPS')),O+'prod29_total.jpg')
 save(split('mannol_8118','MANNOL',['Ultra Gear','Oil 8118'],['Olio semisintetico','SAE 75W-90','API GL-5','SAE J2360','Cambi e differenziali']),O+'prod02_8118.jpg')

@@ -13,3 +13,9 @@
 - Pronto ma NON programmato: media/reels/reel_030.mp4 (tre 0W-30) — usare dal 24/11 (tema già in carosello 11/11).
 - Da fare con dati reali: storia "bilancio del mese" 8/11 (Metricool); sondaggi/sticker aggiunti a mano nell'app.
 - Prossimo giorno scoperto: 22/11.
+
+## Programmazione Metricool 8–21 novembre 2026 (completata 9 ott)
+- 28 contenuti creati (14 feed + 14 storie 12:30), tutti PENDING su FB+IG; QC tools/qc.py: 0 problemi; verifica live 8–13 nov OK (2 contenuti/giorno).
+- Reel 13 nov (errori), Reel 18 nov (uso). reel_030 NON programmato: usare dal 24/11.
+- Da fare: storia "bilancio del mese" dell'8/11 con statistiche reali Metricool (sostituire/affiancare st08 solo con dati veri).
+- Prossimo giorno scoperto: 22/11.

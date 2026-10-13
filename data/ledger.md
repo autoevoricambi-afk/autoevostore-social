@@ -19,3 +19,8 @@
 - Reel 13 nov (errori), Reel 18 nov (uso). reel_030 NON programmato: usare dal 24/11.
 - Da fare: storia "bilancio del mese" dell'8/11 con statistiche reali Metricool (sostituire/affiancare st08 solo con dati veri).
 - Prossimo giorno scoperto: 22/11.
+
+## 13 ott 2026 — correzioni grafiche (programmazione invariata)
+- 7/11 12:00 (IG+FB): grafica con Castrol EDGE 5W-30 LL + reso 14 giorni; 8/11 18:30 (IG+FB): sondaggio A/B/C con Mobil 1 ESP 5W-30 (flaconi usati solo come immagine, non come post prodotto).
+- 10/11 e 11/11 caroselli (IG+FB): piè di pagina "autoevostore.it" (senza "link in bio"), alt text allineati ai contenuti.
+- Da fare: storie testuali 21/10-21/11 con flaconi reali; allineare qc.py alla chiusura "dal link nel profilo" (IG) / link UTM (FB).

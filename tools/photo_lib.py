@@ -60,7 +60,7 @@ def kicker(img,txt,y,size=34):
         d.text((x,y),ch,font=f,fill=CY+(255,)); x+=d.textlength(ch,font=f)+5
     return img
 
-def foot(img,txt='autoevostore.it  ·  link in bio',y=None,size=32):
+def foot(img,txt='autoevostore.it',y=None,size=32):
     H=img.height; y=y if y is not None else H-92
     ctext(img,txt,y,font('Medium',size),SOFT); return img
 

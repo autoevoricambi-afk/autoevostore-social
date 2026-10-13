@@ -86,7 +86,7 @@ def hero(key,kick,lines,chips=(),W=1080,H=1350,bottle_h=None,fonts=74,sub=None):
     img=kicker(img,kick,y); y+=64
     img,y=title(img,lines,y,size=fonts)
     if sub:
-        y+=4; paragraph(img,sub,y,font('Regular',34),SOFT,maxw=860);
+        y+=4; y=paragraph(img,sub,y,font('Regular',34),SOFT,maxw=860) or y+60
     bh=bottle_h or int(H*0.50)
     bottom=H-(200 if not chips else 270) if not story else H-340
     bh=min(bh,bottom-y-50)
@@ -183,4 +183,23 @@ def bigspec(key,spec,kick,lines,chips=(),W=1080,H=1350,tilt=-6,fonts=60):
     bh=min(int(H*0.56),bottom-y-30)
     img=place(img,key,W//2,bottom,bh,tilt=tilt)
     if chips: img=chips_row(img,chips,bottom+(40 if not story else 52))
+    return foot(img)
+
+def framed(gpath,kick,lines,sub=None,W=1080,H=1350,fonts=64,keep=0.92):
+    """Grafica prodotto Shopify (render quadrato) in cornice arrotondata sotto al titolo."""
+    story=H>1500
+    img,y=base(W,H,logo_w=460 if not story else 540,glows=((0.5,0.65,0.6,0.35,0.22),))
+    y+=34; img=kicker(img,kick,y); y+=64
+    img,y=title(img,lines,y,size=fonts)
+    if sub:
+        paragraph(img,sub,y+4,font('Regular',34),SOFT,maxw=860); y+=70
+    g=Image.open(gpath).convert('RGB')
+    avail=(H-(150 if not story else 330))-y-20
+    s=min(avail/g.height,(W*keep)/g.width)
+    g=g.resize((int(g.width*s),int(g.height*s)),Image.LANCZOS)
+    m=Image.new('L',g.size,0); ImageDraw.Draw(m).rounded_rectangle([0,0,g.width-1,g.height-1],radius=34,fill=255)
+    gl=Image.new('RGBA',(W,H),(0,0,0,0)); x=(W-g.width)//2
+    ImageDraw.Draw(gl).rounded_rectangle([x-6,y-6,x+g.width+6,y+g.height+6],radius=40,outline=CY+(190,),width=3)
+    img=Image.alpha_composite(img,gl)
+    img.paste(g,(x,y),m)
     return foot(img)

@@ -24,3 +24,10 @@
 - 7/11 12:00 (IG+FB): grafica con Castrol EDGE 5W-30 LL + reso 14 giorni; 8/11 18:30 (IG+FB): sondaggio A/B/C con Mobil 1 ESP 5W-30 (flaconi usati solo come immagine, non come post prodotto).
 - 10/11 e 11/11 caroselli (IG+FB): piè di pagina "autoevostore.it" (senza "link in bio"), alt text allineati ai contenuti.
 - Da fare: storie testuali 21/10-21/11 con flaconi reali; allineare qc.py alla chiusura "dal link nel profilo" (IG) / link UTM (FB).
+
+## 2026-10-18 (domenica) — controllo copertura
+- Metricool: programmazione già presente fino al 21/11 (34 giorni davanti a oggi, soglia 21): nessun nuovo contenuto creato in questo giro. Prossimo giorno scoperto: 22/11 (da coprire entro la domenica 1/11 o 8/11).
+- Verifica live 18-27/10: 3-6 contenuti/giorno (feed IG+FB, storie 12:30 e 19:00), tutti PENDING.
+- Numeri IG 9-17/10 (8 post): reach organica 2-5 per post, interazioni 0-2, nessun salvataggio/condivisione. Storico troppo scarso per scegliere formati/temi: non si trae nessuna conclusione; i caroselli (9/10, 12/10, 13/10) restano quelli con reach leggermente più alta (3-4), dato non significativo.
+- tools/qc.py segnala falsi positivi su 18-27/10: non conosce la chiusura IG "dal link nel profilo" / link UTM FB e controlla i post per singolo provider (richiede FB+IG insieme). Da aggiornare prima del prossimo QC.
+- Bilancio del mese: 1/11 (domenica, inizio mese) — preparare allora con dati reali, solo se sufficienti.

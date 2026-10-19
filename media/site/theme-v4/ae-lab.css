@@ -1,0 +1,13 @@
+/* AUTO EVO Performance Lab — ritocchi sicuri per scheda prodotto e carrello (nessun layout, prezzi o logica pacchi toccati) */
+body.gradient{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body .button,body .shopify-challenge__button,body .cart__checkout-button{transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s,background-color .25s}
+body .button:not([disabled]):hover{transform:translateY(-1px)}
+body .button:not([disabled]):active{transform:translateY(0)}
+body .cart__checkout-button,body .product-form__submit{letter-spacing:.04em;font-weight:600;min-height:4.8rem}
+body :focus-visible{outline:2px solid #1fbf75;outline-offset:3px;border-radius:2px}
+body .product__media-wrapper .media,body .product-media-container,body .cart-item__image{border-radius:14px}
+body .quantity{border-radius:999px;overflow:hidden}
+body .cart-item{border-top:1px solid rgba(var(--color-foreground),.08)}
+body .totals__total-value{font-weight:700;letter-spacing:-.01em}
+body .cart__ctas{gap:1rem}
+@media (prefers-reduced-motion:reduce){body .button,body .cart__checkout-button{transition:none}body .button:hover{transform:none}}

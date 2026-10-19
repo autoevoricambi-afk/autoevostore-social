@@ -1,0 +1,63 @@
+<section class="ae-s" id="{{ section.id }}">
+  <div class="ae-wrap">
+    <header class="ae-head">
+      {%- if section.settings.kicker != blank -%}<p class="ae-kicker">{{ section.settings.kicker }}</p>{%- endif -%}
+      <h2 class="ae-h2">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}<p class="ae-sub">{{ section.settings.subheading }}</p>{%- endif -%}
+    </header>
+    <div class="ae-cards ae-cards--{{ section.settings.columns }}">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign col = collections[block.settings.collection]
+          assign url = block.settings.link
+          if url == blank and col != blank
+            assign url = col.url
+          endif
+          assign img = block.settings.image
+          if img == blank and col != blank
+            assign img = col.image
+            if img == blank
+              assign img = col.products.first.featured_image
+            endif
+          endif
+          assign ttl = block.settings.title | default: col.title
+        -%}
+        <a class="ae-card" href="{{ url | default: '#' }}" {{ block.shopify_attributes }}>
+          {%- if img != blank -%}
+            <span class="ae-card__img">{{ img | image_url: width: 600 | image_tag: loading: 'lazy', widths: '300, 450, 600', sizes: '(min-width: 900px) 30vw, 90vw', alt: ttl }}</span>
+          {%- endif -%}
+          <span class="ae-card__body">
+            <b>{{ ttl }}</b>
+            {%- if block.settings.text != blank -%}<span>{{ block.settings.text }}</span>{%- endif -%}
+            <i aria-hidden="true">→</i>
+          </span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "AE Schede",
+  "settings": [
+    {"type": "text", "id": "kicker", "label": "Sopratitolo"},
+    {"type": "text", "id": "heading", "label": "Titolo", "default": "Acquista per categoria"},
+    {"type": "textarea", "id": "subheading", "label": "Sottotitolo"},
+    {"type": "select", "id": "columns", "label": "Colonne desktop", "default": "3", "options": [{"value": "2", "label": "2"}, {"value": "3", "label": "3"}, {"value": "4", "label": "4"}]}
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Scheda",
+      "settings": [
+        {"type": "collection", "id": "collection", "label": "Collezione (usa titolo, link e immagine)"},
+        {"type": "text", "id": "title", "label": "Titolo (facoltativo)"},
+        {"type": "text", "id": "text", "label": "Testo"},
+        {"type": "url", "id": "link", "label": "Link (facoltativo)"},
+        {"type": "image_picker", "id": "image", "label": "Immagine (facoltativa)"}
+      ]
+    }
+  ],
+  "presets": [{"name": "AE Schede", "blocks": [{"type": "card"}, {"type": "card"}, {"type": "card"}]}]
+}
+{% endschema %}

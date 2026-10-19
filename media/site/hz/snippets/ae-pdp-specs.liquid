@@ -1,0 +1,10 @@
+{%- assign sl = product.metafields.custom.specifiche.value -%}
+{%- if sl != blank -%}
+  <div class="ae-pdp"><div class="ae-box">
+    <p class="ae-box__t">{% if request.locale.iso_code == 'de' %}Spezifikationen{% elsif request.locale.iso_code == 'en' %}Approvals and specifications{% else %}Omologazioni e specifiche{% endif %}</p>
+    <div class="ae-pspecs">
+      {%- for s in sl -%}<a class="ae-chip" href="/pages/omologazioni?spec={{ s | url_encode }}#risultati">{{ s | escape }}</a>{%- endfor -%}
+    </div>
+    <p class="ae-note">{% if request.locale.iso_code == 'it' or request.locale.iso_code == blank %}Verifica sempre il libretto: <a href="/pages/guida-sigle-acea-api-oem">guida alle sigle</a>.{% endif %}</p>
+  </div></div>
+{%- endif -%}

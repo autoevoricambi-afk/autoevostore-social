@@ -1,0 +1,169 @@
+{%- comment -%}
+  Scelta confezione: totale, prezzo al litro e risparmio reale, calcolati dai prezzi delle varianti (titoli "3x1L", "2x5L").
+  Pilota il selettore varianti standard del tema (radio nel variant-picker).
+{%- endcomment -%}
+{%- liquid
+  assign cur = product.selected_or_first_available_variant
+  assign show_packs = false
+  if product.options.size == 1 and product.variants.size > 1
+    assign show_packs = true
+  endif
+  assign base_price = 0
+  assign best_ppl = 0
+  assign lang = request.locale.iso_code
+  for v in product.variants
+    assign parts = v.title | downcase | split: 'x'
+    if parts.size == 2
+      assign n = parts.first | strip | plus: 0
+      if n == 1
+        assign base_price = v.price
+      endif
+      assign lpu0 = parts.last | remove: 'l' | strip | replace: ',', '.' | times: 1.0
+      assign liters0 = lpu0 | times: n
+      if liters0 > 0 and v.available
+        assign ppl0 = v.price | divided_by: liters0 | round
+        if best_ppl == 0 or ppl0 < best_ppl
+          assign best_ppl = ppl0
+        endif
+      endif
+    endif
+  endfor
+  if lang == 'de'
+    assign w_title = 'Packungsgröße wählen'
+    assign w_intro = 'Je mehr Flaschen, desto weniger zahlen Sie pro Liter.'
+    assign w_best = 'Bester Preis'
+    assign w_save = 'Sie sparen'
+    assign w_pack = 'Packung'
+    assign w_total = 'Gesamt'
+    assign w_ppl = 'Pro Liter'
+    assign w_sav = 'Ersparnis'
+    assign w_out = 'ausverkauft'
+    assign w_in = 'Auf Lager'
+    assign w_oos = 'Derzeit nicht verfügbar'
+  elsif lang == 'en'
+    assign w_title = 'Choose your pack'
+    assign w_intro = 'The more bottles you take, the less you pay per litre.'
+    assign w_best = 'Best price'
+    assign w_save = 'You save'
+    assign w_pack = 'Pack'
+    assign w_total = 'Total'
+    assign w_ppl = 'Per litre'
+    assign w_sav = 'Saving'
+    assign w_out = 'sold out'
+    assign w_in = 'In stock'
+    assign w_oos = 'Currently unavailable'
+  else
+    assign w_title = 'Scegli la confezione'
+    assign w_intro = 'Più flaconi prendi, meno paghi al litro.'
+    assign w_best = 'Miglior prezzo'
+    assign w_save = 'Risparmi'
+    assign w_pack = 'Confezione'
+    assign w_total = 'Totale'
+    assign w_ppl = 'Al litro'
+    assign w_sav = 'Risparmio'
+    assign w_out = 'esaurito'
+    assign w_in = 'Disponibile'
+    assign w_oos = 'Al momento non disponibile'
+  endif
+-%}
+<div class="ae-pdp">
+  {%- if product.available -%}
+    <div class="ae-stock"><i></i>{{ w_in }}</div>
+  {%- else -%}
+    <div class="ae-stock ae-stock--out"><i></i>{{ w_oos }}</div>
+  {%- endif -%}
+
+  {%- if show_packs -%}
+    <div class="ae-box" id="AePacks-{{ product.id }}">
+      <p class="ae-box__t">{{ w_title }}</p>
+      <p class="ae-packs__intro">{{ w_intro }}</p>
+      <table class="ae-packs">
+        <thead>
+          <tr><th>{{ w_pack }}</th><th class="num">{{ w_total }}</th><th class="num">{{ w_ppl }}</th><th class="num">{{ w_sav }}</th></tr>
+        </thead>
+        <tbody>
+          {%- for v in product.variants -%}
+            {%- liquid
+              assign parts = v.title | downcase | split: 'x'
+              assign n = 0
+              assign liters = 0
+              if parts.size == 2
+                assign n = parts.first | strip | plus: 0
+                assign lpu = parts.last | remove: 'l' | strip | replace: ',', '.' | times: 1.0
+                assign liters = lpu | times: n
+              endif
+              assign per_l = 0
+              if liters > 0
+                assign per_l = v.price | divided_by: liters | round
+              endif
+              assign save = 0
+              assign save_eur = 0
+              if base_price > 0 and n > 1
+                assign full = base_price | times: n
+                if full > v.price
+                  assign diff = full | minus: v.price
+                  assign save = diff | times: 100 | divided_by: full
+                  assign save_eur = diff
+                endif
+              endif
+              if save == 0 and v.compare_at_price > v.price
+                assign diff2 = v.compare_at_price | minus: v.price
+                assign save = diff2 | times: 100 | divided_by: v.compare_at_price
+                assign save_eur = diff2
+              endif
+            -%}
+            <tr tabindex="0" role="button" data-variant="{{ v.id }}" data-value="{{ v.option1 | escape }}" class="{% if v.id == cur.id %}is-active{% endif %}{% unless v.available %} is-out{% endunless %}">
+              <td>
+                {%- if n > 0 -%}{{ n }} × {{ parts.last | upcase | replace: 'L', ' L' }}{%- else -%}{{ v.title | escape }}{%- endif -%}
+                {%- unless v.available -%} <small>({{ w_out }})</small>{%- endunless -%}
+                {%- if v.available and per_l > 0 and per_l == best_ppl and n > 1 -%}<span class="ae-best">{{ w_best }}</span>{%- endif -%}
+              </td>
+              <td class="num"><b>{{ v.price | money }}</b></td>
+              <td class="num">{% if per_l > 0 %}{{ per_l | money }}{% else %}—{% endif %}</td>
+              <td class="num">{% if save >= 1 %}<span class="ae-save">-{{ save }}%</span><small class="ae-save-eur">{{ w_save }} {{ save_eur | money }}</small>{% else %}—{% endif %}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+    <script>
+      (function () {
+        var box = document.getElementById('AePacks-{{ product.id }}');
+        if (!box || box.dataset.aeInit) return;
+        box.dataset.aeInit = '1';
+        var scope = box.closest('[id^="ProductInformation"]') || box.closest('section') || document;
+        function radios() { return scope.querySelectorAll('variant-picker input[type="radio"]'); }
+        function checkedValue() { var c = scope.querySelector('variant-picker input[type="radio"]:checked'); return c ? c.value : null; }
+        function mark() {
+          var val = checkedValue();
+          if (val === null) return;
+          box.querySelectorAll('tr[data-variant]').forEach(function (tr) {
+            tr.classList.toggle('is-active', tr.getAttribute('data-value') === val);
+          });
+        }
+        function init() {
+          if (!radios().length) return false;
+          scope.classList.add('ae-packs-on');
+          mark();
+          return true;
+        }
+        function pick(tr) {
+          var val = tr.getAttribute('data-value'), target = null;
+          radios().forEach(function (r) { if (r.value === val) target = r; });
+          if (target && !target.checked) target.click();
+          tr.classList.add('is-active');
+          setTimeout(mark, 500);
+        }
+        box.addEventListener('click', function (e) { var tr = e.target.closest('tr[data-variant]'); if (tr) pick(tr); });
+        box.addEventListener('keydown', function (e) {
+          if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('tr[data-variant]')) { e.preventDefault(); pick(e.target); }
+        });
+        scope.addEventListener('change', function () { setTimeout(mark, 60); });
+        document.addEventListener('variant:update', function () { setTimeout(mark, 60); });
+        var picker = scope.querySelector('variant-picker');
+        if (picker && window.MutationObserver) { new MutationObserver(mark).observe(picker, { subtree: true, attributes: true, attributeFilter: ['checked'] }); }
+        if (!init()) { document.addEventListener('DOMContentLoaded', init); window.addEventListener('load', init); }
+      })();
+    </script>
+  {%- endif -%}
+</div>

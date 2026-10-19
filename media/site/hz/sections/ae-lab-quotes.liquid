@@ -1,0 +1,41 @@
+<section class="ae-s ae-s--alt" id="{{ section.id }}">
+  <div class="ae-wrap">
+    <header class="ae-head">
+      <h2 class="ae-h2">{{ section.settings.heading }}</h2>
+      {%- if section.settings.note != blank -%}<p class="ae-sub">{{ section.settings.note }}</p>{%- endif -%}
+    </header>
+    <div class="ae-quotes">
+      {%- for block in section.blocks -%}
+        <figure class="ae-quote" {{ block.shopify_attributes }}>
+          <div class="ae-stars" role="img" aria-label="{{ block.settings.rating }} su 5">{% for i in (1..block.settings.rating) %}★{% endfor %}</div>
+          <blockquote>“{{ block.settings.quote }}”</blockquote>
+          <figcaption>
+            <b>{{ block.settings.name }}</b>
+            {%- if block.settings.product_label != blank -%}
+              <span>{% if block.settings.product_handle != blank %}<a href="/products/{{ block.settings.product_handle }}">{{ block.settings.product_label }}</a>{% else %}{{ block.settings.product_label }}{% endif %}</span>
+            {%- endif -%}
+          </figcaption>
+        </figure>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "AE Recensioni",
+  "settings": [
+    {"type": "text", "id": "heading", "label": "Titolo", "default": "Cosa dicono i nostri clienti"},
+    {"type": "textarea", "id": "note", "label": "Nota sulla fonte"}
+  ],
+  "blocks": [
+    {"type": "review", "name": "Recensione", "settings": [
+      {"type": "text", "id": "name", "label": "Nome", "default": "Cliente"},
+      {"type": "range", "id": "rating", "label": "Stelle", "min": 1, "max": 5, "step": 1, "default": 5},
+      {"type": "textarea", "id": "quote", "label": "Testo"},
+      {"type": "text", "id": "product_label", "label": "Prodotto"},
+      {"type": "text", "id": "product_handle", "label": "Handle prodotto"}
+    ]}
+  ],
+  "presets": [{"name": "AE Recensioni", "blocks": [{"type": "review"}]}]
+}
+{% endschema %}

@@ -1,0 +1,839 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */{
+  "sections": {
+    "ae3d": {
+      "type": "ae-home-3d",
+      "settings": {}
+    },
+    "trust": {
+      "type": "ae-lab-trust",
+      "blocks": {
+        "b0": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Spedizione gratuita",
+            "text": "In Italia, 24/48 ore con BRT"
+          }
+        },
+        "b1": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "title": "Prodotti originali",
+            "text": "Confezioni sigillate del produttore"
+          }
+        },
+        "b2": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "title": "Reso entro 14 giorni",
+            "text": "Su prodotti integri e non aperti"
+          }
+        },
+        "b3": {
+          "type": "item",
+          "settings": {
+            "icon": "chat",
+            "title": "Assistenza",
+            "text": "Lun-ven 9:00-18:00"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "settings": {}
+    },
+    "categories": {
+      "type": "ae-lab-cards",
+      "blocks": {
+        "b0": {
+          "type": "card",
+          "settings": {
+            "collection": "olio-motore",
+            "text": "Benzina e diesel, dalla gradazione all'omologazione"
+          }
+        },
+        "b1": {
+          "type": "card",
+          "settings": {
+            "collection": "olio-cambio-e-differenziale",
+            "text": "Cambio manuale e differenziale"
+          }
+        },
+        "b2": {
+          "type": "card",
+          "settings": {
+            "collection": "olio-cambio-automatico-atf",
+            "text": "Per cambi automatici e DSG"
+          }
+        },
+        "b3": {
+          "type": "card",
+          "settings": {
+            "collection": "olio-idraulico",
+            "text": "Impianti e macchine"
+          }
+        },
+        "b4": {
+          "type": "card",
+          "settings": {
+            "collection": "olio-2-tempi",
+            "text": "Moto e miscela"
+          }
+        },
+        "b5": {
+          "type": "card",
+          "settings": {
+            "collection": "piu-venduti",
+            "text": "Quelli che scelgono più spesso i clienti"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ],
+      "settings": {
+        "kicker": "Reparti",
+        "heading": "Acquista per categoria",
+        "subheading": "Motore, cambio, idraulico e 2 tempi: trova subito il reparto giusto.",
+        "columns": "3"
+      }
+    },
+    "bestsellers": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_YFtzcL": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h2>I più venduti</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_button_MWeP9V": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "Vedi tutti",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_YFtzcL",
+            "product_list_button_MWeP9V"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 4,
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_677WP3": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "adapt",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_YXxMTj": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_JQzVV4": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_677WP3",
+            "product_title_YXxMTj",
+            "price_JQzVV4"
+          ]
+        }
+      },
+      "name": "t:names.product_list",
+      "settings": {
+        "collection": "piu-venduti",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 8,
+        "columns": 4,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 8,
+        "rows_gap": 24,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 28,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      }
+    },
+    "grades": {
+      "type": "ae-lab-chips",
+      "blocks": {
+        "b0": {
+          "type": "chip",
+          "settings": {
+            "group": "Olio motore",
+            "label": "0W-20",
+            "link": "/collections/all?filter.p.m.custom.viscosita=0W-20"
+          }
+        },
+        "b1": {
+          "type": "chip",
+          "settings": {
+            "group": "Olio motore",
+            "label": "0W-30",
+            "link": "/collections/all?filter.p.m.custom.viscosita=0W-30"
+          }
+        },
+        "b2": {
+          "type": "chip",
+          "settings": {
+            "group": "Olio motore",
+            "label": "0W-40",
+            "link": "/collections/all?filter.p.m.custom.viscosita=0W-40"
+          }
+        },
+        "b3": {
+          "type": "chip",
+          "settings": {
+            "group": "Olio motore",
+            "label": "5W-20",
+            "link": "/collections/all?filter.p.m.custom.viscosita=5W-20"
+          }
+        },
+        "b4": {
+          "type": "chip",
+          "settings": {
+            "group": "Olio motore",
+            "label": "5W-30",
+            "link": "/collections/all?filter.p.m.custom.viscosita=5W-30"
+          }
+        },
+        "b5": {
+          "type": "chip",
+          "settings": {
+            "group": "Olio motore",
+            "label": "5W-40",
+            "link": "/collections/all?filter.p.m.custom.viscosita=5W-40"
+          }
+        },
+        "b6": {
+          "type": "chip",
+          "settings": {
+            "group": "Olio motore",
+            "label": "10W-40",
+            "link": "/collections/all?filter.p.m.custom.viscosita=10W-40"
+          }
+        },
+        "b7": {
+          "type": "chip",
+          "settings": {
+            "group": "Olio motore",
+            "label": "10W-60",
+            "link": "/collections/all?filter.p.m.custom.viscosita=10W-60"
+          }
+        },
+        "b8": {
+          "type": "chip",
+          "settings": {
+            "group": "Olio motore",
+            "label": "15W-40",
+            "link": "/collections/all?filter.p.m.custom.viscosita=15W-40"
+          }
+        },
+        "b9": {
+          "type": "chip",
+          "settings": {
+            "group": "Cambio e differenziale",
+            "label": "75W-80",
+            "link": "/collections/all?filter.p.m.custom.viscosita=75W-80"
+          }
+        },
+        "b10": {
+          "type": "chip",
+          "settings": {
+            "group": "Cambio e differenziale",
+            "label": "75W-90",
+            "link": "/collections/all?filter.p.m.custom.viscosita=75W-90"
+          }
+        },
+        "b11": {
+          "type": "chip",
+          "settings": {
+            "group": "Cambio e differenziale",
+            "label": "80W-90",
+            "link": "/collections/all?filter.p.m.custom.viscosita=80W-90"
+          }
+        },
+        "b12": {
+          "type": "chip",
+          "settings": {
+            "group": "Cambio e differenziale",
+            "label": "85W-140",
+            "link": "/collections/all?filter.p.m.custom.viscosita=85W-140"
+          }
+        },
+        "b13": {
+          "type": "chip",
+          "settings": {
+            "group": "Cambio automatico",
+            "label": "ATF",
+            "link": "/collections/all?filter.p.m.custom.viscosita=ATF"
+          }
+        },
+        "b14": {
+          "type": "chip",
+          "settings": {
+            "group": "Idraulico",
+            "label": "ISO 46",
+            "link": "/collections/all?filter.p.m.custom.viscosita=ISO%2046"
+          }
+        },
+        "b15": {
+          "type": "chip",
+          "settings": {
+            "group": "Idraulico",
+            "label": "ISO 68",
+            "link": "/collections/all?filter.p.m.custom.viscosita=ISO%2068"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9",
+        "b10",
+        "b11",
+        "b12",
+        "b13",
+        "b14",
+        "b15"
+      ],
+      "settings": {
+        "kicker": "Dal libretto al carrello",
+        "heading": "Cerca per gradazione",
+        "subheading": "La gradazione è scritta sul libretto di uso e manutenzione o sul tappo dell'olio.",
+        "whatsapp": "393923178180"
+      }
+    },
+    "specs": {
+      "type": "ae-lab-chips",
+      "blocks": {
+        "b0": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "VW 504.00",
+            "link": "/pages/omologazioni?spec=VW%20504.00#risultati"
+          }
+        },
+        "b1": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "VW 507.00",
+            "link": "/pages/omologazioni?spec=VW%20507.00#risultati"
+          }
+        },
+        "b2": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "VW 502.00",
+            "link": "/pages/omologazioni?spec=VW%20502.00#risultati"
+          }
+        },
+        "b3": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "VW 505.01",
+            "link": "/pages/omologazioni?spec=VW%20505.01#risultati"
+          }
+        },
+        "b4": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "MB 229.51",
+            "link": "/pages/omologazioni?spec=MB%20229.51#risultati"
+          }
+        },
+        "b5": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "MB 229.52",
+            "link": "/pages/omologazioni?spec=MB%20229.52#risultati"
+          }
+        },
+        "b6": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "BMW LL-04",
+            "link": "/pages/omologazioni?spec=BMW%20LL-04#risultati"
+          }
+        },
+        "b7": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "BMW LL-01",
+            "link": "/pages/omologazioni?spec=BMW%20LL-01#risultati"
+          }
+        },
+        "b8": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "dexos2",
+            "link": "/pages/omologazioni?spec=dexos2#risultati"
+          }
+        },
+        "b9": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "dexos1 Gen2",
+            "link": "/pages/omologazioni?spec=dexos1%20Gen2#risultati"
+          }
+        },
+        "b10": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "Fiat 9.55535",
+            "link": "/pages/omologazioni?spec=Fiat%209.55535#risultati"
+          }
+        },
+        "b11": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "Ford WSS-M2C",
+            "link": "/pages/omologazioni?spec=Ford%20WSS-M2C#risultati"
+          }
+        },
+        "b12": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "ACEA C2",
+            "link": "/pages/omologazioni?spec=ACEA%20C2#risultati"
+          }
+        },
+        "b13": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "ACEA C3",
+            "link": "/pages/omologazioni?spec=ACEA%20C3#risultati"
+          }
+        },
+        "b14": {
+          "type": "chip",
+          "settings": {
+            "group": "Omologazione del costruttore",
+            "label": "ACEA A3/B4",
+            "link": "/pages/omologazioni?spec=ACEA%20A3%2FB4#risultati"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9",
+        "b10",
+        "b11",
+        "b12",
+        "b13",
+        "b14"
+      ],
+      "settings": {
+        "kicker": "La sigla giusta, senza errori",
+        "heading": "Cerca per omologazione",
+        "subheading": "Se il libretto chiede una specifica precisa parti da qui. Mai la sola viscosità: conta l'omologazione.",
+        "whatsapp": "393923178180"
+      }
+    },
+    "brands": {
+      "type": "ae-lab-marquee",
+      "blocks": {
+        "b0": {
+          "type": "brand",
+          "settings": {
+            "name": "Castrol",
+            "link": "/collections/castrol"
+          }
+        },
+        "b1": {
+          "type": "brand",
+          "settings": {
+            "name": "Selenia",
+            "link": "/collections/selenia"
+          }
+        },
+        "b2": {
+          "type": "brand",
+          "settings": {
+            "name": "Petronas",
+            "link": "/collections/petronas"
+          }
+        },
+        "b3": {
+          "type": "brand",
+          "settings": {
+            "name": "Mobil",
+            "link": "/collections/mobil"
+          }
+        },
+        "b4": {
+          "type": "brand",
+          "settings": {
+            "name": "Total",
+            "link": "/collections/totalenergies"
+          }
+        },
+        "b5": {
+          "type": "brand",
+          "settings": {
+            "name": "Mannol",
+            "link": "/collections/mannol"
+          }
+        },
+        "b6": {
+          "type": "brand",
+          "settings": {
+            "name": "Elf",
+            "link": "/collections/elf"
+          }
+        },
+        "b7": {
+          "type": "brand",
+          "settings": {
+            "name": "Ford Motorcraft",
+            "link": "/collections/ford-motorcraft"
+          }
+        },
+        "b8": {
+          "type": "brand",
+          "settings": {
+            "name": "GM / Opel",
+            "link": "/collections/gm-opel"
+          }
+        },
+        "b9": {
+          "type": "brand",
+          "settings": {
+            "name": "IP",
+            "link": "/collections/ip"
+          }
+        },
+        "b10": {
+          "type": "brand",
+          "settings": {
+            "name": "WRC",
+            "link": "/collections/wrc"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9",
+        "b10"
+      ],
+      "settings": {
+        "heading": "Le marche che trattiamo"
+      }
+    },
+    "reviews": {
+      "type": "ae-lab-quotes",
+      "blocks": {
+        "b0": {
+          "type": "review",
+          "settings": {
+            "name": "Roberto",
+            "rating": 5,
+            "quote": "Ottimo prodotto per la prestazione della mia auto.",
+            "product_label": "Selenia WR Forward 0W-30",
+            "product_handle": "selenia-wr-forward-0w30-mopar-fiat-955535-ds1-dh1-acea-c2"
+          }
+        },
+        "b1": {
+          "type": "review",
+          "settings": {
+            "name": "Mancino",
+            "rating": 5,
+            "quote": "Prodotto altamente consigliato per le sue specifiche ad un prezzo veramente economico con spedizione nazionale gratuita.",
+            "product_label": "MANNOL Longlife 504/507 5W-30",
+            "product_handle": "mannol-longlife-5w-30-acea-c3-vw-504-00-507-00-porsche-c30"
+          }
+        },
+        "b2": {
+          "type": "review",
+          "settings": {
+            "name": "Andrea",
+            "rating": 5,
+            "quote": "Prodotto originale e conforme alla descrizione.",
+            "product_label": "ENI i-Sint Professional 10W-40",
+            "product_handle": "eni-i-sint-professional-10w-40-olio-motore-sintetico-benzina-diesel"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2"
+      ],
+      "settings": {
+        "heading": "Cosa dicono i nostri clienti",
+        "note": "Recensioni reali raccolte sui prodotti acquistati su Auto Evo Store."
+      }
+    },
+    "help": {
+      "type": "ae-lab-cta",
+      "settings": {
+        "title": "Non sai quale olio serve alla tua auto?",
+        "text": "Te lo diciamo noi, prima che tu ordini. Scrivici targa e modello in DM: verifichiamo noi la specifica giusta.",
+        "whatsapp": "393923178180",
+        "guide_link": "/pages/guida-sigle-acea-api-oem",
+        "b2b_title": "Sei un'officina o un rivenditore?",
+        "b2b_text": "Lavori con i lubrificanti ogni giorno? Mandaci ragione sociale e partita IVA: ti ricontattiamo per le condizioni riservate ai professionisti.",
+        "b2b_button": "Area rivenditori",
+        "b2b_link": "/pages/b2b-rivenditori"
+      }
+    },
+    "faq": {
+      "type": "ae-lab-faq",
+      "blocks": {
+        "b0": {
+          "type": "question",
+          "settings": {
+            "question": "Quanto costa la spedizione e quando arriva?",
+            "answer": "<p>In Italia la spedizione è gratuita. Prepariamo l'ordine e lo affidiamo al corriere BRT entro 1 giorno lavorativo dalla conferma del pagamento; la consegna avviene in 24/48 ore lavorative, qualche giorno in più per isole e località disagiate. Dopo la spedizione ricevi via email il codice di tracciamento. In Europa la consegna richiede 3-7 giorni lavorativi (escluse Cipro e Malta).</p>"
+          }
+        },
+        "b1": {
+          "type": "question",
+          "settings": {
+            "question": "Come scelgo l'olio giusto per la mia auto?",
+            "answer": "<p>Controlla sul libretto di uso e manutenzione due cose: la gradazione (per esempio 5W-30) e la specifica richiesta dal costruttore (per esempio VW 504.00/507.00, GM dexos2 o Fiat 9.55535). La sola viscosità non basta per dire che un olio è compatibile. Se hai dubbi scrivici targa e modello in DM: verifichiamo noi la specifica giusta.</p>"
+          }
+        },
+        "b2": {
+          "type": "question",
+          "settings": {
+            "question": "I prodotti sono originali?",
+            "answer": "<p>Sì. Ogni prodotto arriva nella confezione originale del produttore, con sigilli integri.</p>"
+          }
+        },
+        "b3": {
+          "type": "question",
+          "settings": {
+            "question": "Posso restituire un prodotto?",
+            "answer": "<p>Sì, entro 14 giorni dalla consegna, se il prodotto è integro, non aperto e nella confezione originale. Scrivi a assistenza@autoevostore.it indicando numero d'ordine, nome e prodotti. Le spese di restituzione sono a carico del cliente, salvo prodotto difettoso o errore nostro; il rimborso avviene entro 14 giorni con lo stesso metodo di pagamento.</p>"
+          }
+        },
+        "b4": {
+          "type": "question",
+          "settings": {
+            "question": "Come posso pagare?",
+            "answer": "<p>Al checkout trovi tutti i metodi di pagamento attivi sul negozio. Il pagamento è gestito sul checkout protetto di Shopify: non vediamo né conserviamo i dati della tua carta.</p>"
+          }
+        },
+        "b5": {
+          "type": "question",
+          "settings": {
+            "question": "Vendete anche a officine e rivenditori?",
+            "answer": "<p>Sì. Compila il modulo nell'<a href=\"/pages/b2b-rivenditori\">Area rivenditori</a> con ragione sociale, partita IVA e un referente: ti ricontattiamo per le condizioni riservate ai professionisti.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ],
+      "settings": {
+        "kicker": "Prima di ordinare",
+        "heading": "Domande frequenti",
+        "text": "Spedizione, resi, pagamenti e scelta dell'olio."
+      }
+    }
+  },
+  "order": [
+    "ae3d",
+    "trust",
+    "categories",
+    "bestsellers",
+    "grades",
+    "specs",
+    "brands",
+    "reviews",
+    "help",
+    "faq"
+  ]
+}

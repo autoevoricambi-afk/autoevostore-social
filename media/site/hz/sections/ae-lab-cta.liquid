@@ -1,0 +1,33 @@
+<section class="ae-s" id="{{ section.id }}">
+  <div class="ae-wrap ae-cta">
+    <div class="ae-cta__p">
+      <h2 class="ae-h3">{{ section.settings.title }}</h2>
+      <p>{{ section.settings.text }}</p>
+      <div class="ae-cta__b">
+        {%- if section.settings.whatsapp != blank -%}<a class="ae-btn" href="https://wa.me/{{ section.settings.whatsapp }}" target="_blank" rel="noopener">Scrivici su WhatsApp</a>{%- endif -%}
+        {%- if section.settings.guide_link != blank -%}<a class="ae-btn ae-btn--ghost" href="{{ section.settings.guide_link }}">Guida alle sigle</a>{%- endif -%}
+      </div>
+    </div>
+    <div class="ae-cta__p ae-cta__p--2">
+      <h2 class="ae-h3">{{ section.settings.b2b_title }}</h2>
+      <p>{{ section.settings.b2b_text }}</p>
+      <div class="ae-cta__b"><a class="ae-btn ae-btn--ghost" href="{{ section.settings.b2b_link | default: '#' }}">{{ section.settings.b2b_button }}</a></div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "AE Aiuto e rivenditori",
+  "settings": [
+    {"type": "text", "id": "title", "label": "Titolo", "default": "Non sai quale olio serve alla tua auto?"},
+    {"type": "textarea", "id": "text", "label": "Testo", "default": "Te lo diciamo noi, prima che tu ordini."},
+    {"type": "text", "id": "whatsapp", "label": "WhatsApp (numero con prefisso)", "default": "393923178180"},
+    {"type": "url", "id": "guide_link", "label": "Link guida"},
+    {"type": "text", "id": "b2b_title", "label": "Titolo rivenditori", "default": "Sei un'officina o un rivenditore?"},
+    {"type": "textarea", "id": "b2b_text", "label": "Testo rivenditori"},
+    {"type": "text", "id": "b2b_button", "label": "Pulsante rivenditori", "default": "Area rivenditori"},
+    {"type": "url", "id": "b2b_link", "label": "Link rivenditori"}
+  ],
+  "presets": [{"name": "AE Aiuto e rivenditori"}]
+}
+{% endschema %}

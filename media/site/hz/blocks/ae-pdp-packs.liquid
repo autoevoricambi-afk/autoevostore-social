@@ -1,0 +1,10 @@
+{%- assign product = closest.product | default: product -%}
+{%- if product != blank -%}{% render 'ae-pdp-packs', product: product %}{%- endif -%}
+{% schema %}
+{
+  "name": "AE scheda packs",
+  "tag": null,
+  "settings": [],
+  "presets": [{"name": "AE scheda packs"}]
+}
+{% endschema %}

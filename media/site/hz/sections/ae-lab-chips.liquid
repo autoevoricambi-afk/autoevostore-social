@@ -1,0 +1,47 @@
+<section class="ae-s ae-s--alt" id="{{ section.id }}">
+  <div class="ae-wrap">
+    <header class="ae-head">
+      {%- if section.settings.kicker != blank -%}<p class="ae-kicker">{{ section.settings.kicker }}</p>{%- endif -%}
+      <h2 class="ae-h2">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}<p class="ae-sub">{{ section.settings.subheading }}</p>{%- endif -%}
+    </header>
+    {%- assign cur = '' -%}
+    <div class="ae-chips">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.group != cur -%}
+          {%- unless forloop.first -%}</div></div>{%- endunless -%}
+          <div class="ae-chips__g"><p>{{ block.settings.group }}</p><div>
+          {%- assign cur = block.settings.group -%}
+        {%- endif -%}
+        <a class="ae-chip" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+        {%- if forloop.last -%}</div></div>{%- endif -%}
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.whatsapp != blank -%}
+      <p class="ae-note">Hai un dubbio? <a href="https://wa.me/{{ section.settings.whatsapp }}?text={{ 'Ciao, vorrei verificare l\'olio giusto per la mia auto. Targa e modello: ' | url_encode }}" target="_blank" rel="noopener">Scrivici targa e modello su WhatsApp</a>: verifichiamo noi la specifica giusta.</p>
+    {%- endif -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "AE Chip di ricerca",
+  "settings": [
+    {"type": "text", "id": "kicker", "label": "Sopratitolo"},
+    {"type": "text", "id": "heading", "label": "Titolo", "default": "Cerca per gradazione"},
+    {"type": "textarea", "id": "subheading", "label": "Sottotitolo"},
+    {"type": "text", "id": "whatsapp", "label": "WhatsApp (solo numero con prefisso)", "default": "393923178180"}
+  ],
+  "blocks": [
+    {
+      "type": "chip",
+      "name": "Chip",
+      "settings": [
+        {"type": "text", "id": "group", "label": "Gruppo", "default": "Olio motore"},
+        {"type": "text", "id": "label", "label": "Etichetta", "default": "5W-30"},
+        {"type": "url", "id": "link", "label": "Link"}
+      ]
+    }
+  ],
+  "presets": [{"name": "AE Chip di ricerca", "blocks": [{"type": "chip"}]}]
+}
+{% endschema %}

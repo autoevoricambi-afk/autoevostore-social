@@ -822,15 +822,136 @@
         "heading": "Domande frequenti",
         "text": "Spedizione, resi, pagamenti e scelta dell'olio."
       }
+    },
+    "ring": {
+      "type": "ae-lab-ring",
+      "blocks": {
+        "b0": {
+          "type": "bottle",
+          "settings": {
+            "product": "castrol-edge-longlife-iii-5w-30-olio-motore-originale-vw-audi-seat-skoda-porsche-c30-mb-229-52-acea-c3",
+            "name": "Castrol EDGE",
+            "sub": "5W-30 LongLife III",
+            "color": "#22a559",
+            "cutout": "https://cdn.shopify.com/s/files/1/0958/0550/5862/files/ae-home3d-b0.png?v=1792394743"
+          }
+        },
+        "b1": {
+          "type": "bottle",
+          "settings": {
+            "product": "total-quartz-ineo-mc3-5w-30-olio-motore-sintetico-low-saps-acea-c3-api-sn-plus",
+            "name": "TotalEnergies Quartz",
+            "sub": "5W-30 INEO MC3",
+            "color": "#e8a317",
+            "cutout": "https://cdn.shopify.com/s/files/1/0958/0550/5862/files/ae-home3d-b1.png?v=1792394744"
+          }
+        },
+        "b2": {
+          "type": "bottle",
+          "settings": {
+            "product": "mobil-1-esp-5w-30-acea-c3-bmw-ll-04-mb-229-52-vw-504-507-psa-rn0710-c30",
+            "name": "Mobil 1 ESP",
+            "sub": "5W-30",
+            "color": "#2f6fe0",
+            "cutout": "https://cdn.shopify.com/s/files/1/0958/0550/5862/files/ae-home3d-b2.png?v=1792394744"
+          }
+        },
+        "b3": {
+          "type": "bottle",
+          "settings": {
+            "product": "castrol-ford-magnatec-a5-5w-30-a5",
+            "name": "Castrol Magnatec",
+            "sub": "5W-30 A5",
+            "color": "#d93a3a",
+            "cutout": "https://cdn.shopify.com/s/files/1/0958/0550/5862/files/ae-home3d-b3.png?v=1792394744"
+          }
+        },
+        "b4": {
+          "type": "bottle",
+          "settings": {
+            "product": "petronas-syntium-prime-xs-5w-30-acea-c3-dexos2-dexos-d",
+            "name": "Petronas Syntium",
+            "sub": "5W-30",
+            "color": "#13b5a3",
+            "cutout": "https://cdn.shopify.com/s/files/1/0958/0550/5862/files/ae-home3d-b4.png?v=1792394744"
+          }
+        },
+        "b5": {
+          "type": "bottle",
+          "settings": {
+            "product": "castrol-edge-0w-20-c5-olio-motore-acea-c5-c6-dexos1-gen-3-mb-229-71",
+            "name": "Castrol EDGE",
+            "sub": "0W-20 C5",
+            "color": "#22a559",
+            "cutout": "https://cdn.shopify.com/s/files/1/0958/0550/5862/files/ae-home3d-b5.png?v=1792394743"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ],
+      "settings": {
+        "kicker": "La gamma",
+        "heading": "Gira la gamma.",
+        "subheading": "Sei flaconi a 360°. Trascina, tocca quello che ti interessa e vai alla scheda."
+      }
+    },
+    "visco": {
+      "type": "ae-lab-visco",
+      "blocks": {
+        "g0": {
+          "type": "grade",
+          "settings": {
+            "grade": "0W-30"
+          }
+        },
+        "g1": {
+          "type": "grade",
+          "settings": {
+            "grade": "5W-30"
+          }
+        },
+        "g2": {
+          "type": "grade",
+          "settings": {
+            "grade": "10W-40"
+          }
+        },
+        "g3": {
+          "type": "grade",
+          "settings": {
+            "grade": "15W-40"
+          }
+        }
+      },
+      "block_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "settings": {
+        "kicker": "Capire l'olio",
+        "heading": "Il numero davanti alla W",
+        "subheading": "Il primo numero (con la W, da winter) dice quanto l'olio scorre bene a freddo: più è basso, meglio scorre all'avviamento. Il secondo indica la densità a caldo.",
+        "note": "Simulazione illustrativa, non una misura reale. Per scegliere l'olio conta soprattutto l'omologazione del costruttore, non la sola viscosità: scrivici targa e modello in DM, verifichiamo noi la specifica giusta."
+      }
     }
   },
   "order": [
     "ae3d",
     "trust",
+    "ring",
     "categories",
     "bestsellers",
     "grades",
     "specs",
+    "visco",
     "brands",
     "reviews",
     "help",

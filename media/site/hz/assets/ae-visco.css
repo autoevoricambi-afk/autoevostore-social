@@ -1,0 +1,17 @@
+.ae-visco{background:#070a0e;color:#f4f1ea;padding:clamp(56px,8vw,112px) 0}
+.ae-visco__wrap{width:min(1240px,100% - 2*clamp(20px,4vw,48px));margin:0 auto}
+.ae-visco__panel{margin-top:clamp(24px,4vw,44px);border:1px solid rgba(244,241,234,.12);border-radius:22px;background:radial-gradient(90% 100% at 50% 0,rgba(31,191,117,.09),transparent 60%),#0b1015;overflow:hidden}
+.ae-visco__cv{display:block;width:100%;height:clamp(300px,44vw,440px);touch-action:pan-y}
+.ae-visco__ctl{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:18px clamp(16px,3vw,32px) 22px;border-top:1px solid rgba(244,241,234,.1)}
+.ae-visco__temp{font-size:clamp(28px,3.4vw,44px);font-weight:700;letter-spacing:-.03em;min-width:5.2ch;font-variant-numeric:tabular-nums}
+.ae-visco__temp small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#9aa4af;font-weight:500}
+.ae-visco input[type=range]{width:100%;height:44px;background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer}
+.ae-visco input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:99px;background:linear-gradient(90deg,#3b82f6,#1fbf75 55%,#f59e0b)}
+.ae-visco input[type=range]::-moz-range-track{height:6px;border-radius:99px;background:linear-gradient(90deg,#3b82f6,#1fbf75 55%,#f59e0b)}
+.ae-visco input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-10px;border-radius:50%;background:#f4f1ea;border:0;box-shadow:0 0 0 6px rgba(244,241,234,.14)}
+.ae-visco input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:#f4f1ea;border:0;box-shadow:0 0 0 6px rgba(244,241,234,.14)}
+.ae-visco__pre{display:flex;gap:8px}
+.ae-visco__pre button{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(244,241,234,.24);background:transparent;color:#f4f1ea;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s,border-color .2s}
+.ae-visco__pre button:hover,.ae-visco__pre button[aria-pressed=true]{background:#1fbf75;border-color:#1fbf75;color:#03150c}
+.ae-visco__note{margin:16px 0 0;font-size:13px;line-height:1.55;color:#9aa4af;max-width:78ch}
+@media(max-width:720px){.ae-visco__ctl{grid-template-columns:1fr 1fr}.ae-visco__ctl input{grid-column:1/-1;order:3}.ae-visco__pre{justify-content:flex-end}}

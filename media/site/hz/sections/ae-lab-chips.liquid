@@ -18,7 +18,8 @@
       {%- endfor -%}
     </div>
     {%- if section.settings.whatsapp != blank -%}
-      <p class="ae-note">Hai un dubbio? <a href="https://wa.me/{{ section.settings.whatsapp }}?text={{ "Ciao, vorrei verificare l'olio giusto per la mia auto. Targa e modello: " | url_encode }}" target="_blank" rel="noopener">Scrivici targa e modello su WhatsApp</a>: verifichiamo noi la specifica giusta.</p>
+      {%- capture ae_wa_text -%}Ciao, vorrei verificare l'olio giusto per la mia auto. Targa e modello: {%- endcapture -%}
+      <p class="ae-note">Hai un dubbio? <a href="https://wa.me/{{ section.settings.whatsapp }}?text={{ ae_wa_text | url_encode }}" target="_blank" rel="noopener">Scrivici targa e modello su WhatsApp</a>: verifichiamo noi la specifica giusta.</p>
     {%- endif -%}
   </div>
 </section>

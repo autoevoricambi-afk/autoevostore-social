@@ -31,3 +31,8 @@
 - Numeri IG 9-17/10 (8 post): reach organica 2-5 per post, interazioni 0-2, nessun salvataggio/condivisione. Storico troppo scarso per scegliere formati/temi: non si trae nessuna conclusione; i caroselli (9/10, 12/10, 13/10) restano quelli con reach leggermente più alta (3-4), dato non significativo.
 - tools/qc.py segnala falsi positivi su 18-27/10: non conosce la chiusura IG "dal link nel profilo" / link UTM FB e controlla i post per singolo provider (richiede FB+IG insieme). Da aggiornare prima del prossimo QC.
 - Bilancio del mese: 1/11 (domenica, inizio mese) — preparare allora con dati reali, solo se sufficienti.
+
+## 2026-10-25 (domenica) — controllo copertura
+- Metricool: programmazione presente fino al 21/11 (27 giorni davanti a oggi, soglia 21): nessun nuovo contenuto creato. Prossimo giorno scoperto: 22/11 (da coprire domenica 1/11 o 8/11 per restare sopra i 21 giorni).
+- Numeri IG feed 9-24/10 (14 post): reach organica 2-5 per post, interazioni 0-2, 0 salvataggi, 0 condivisioni. Storico ancora troppo scarso per scegliere formati/temi: nessuna conclusione (caroselli 2-4 di reach, schede 2-5: differenze non significative).
+- Bilancio del mese: domenica 1/11 — prepararlo con dati reali solo se sufficienti (ad oggi i volumi sono molto bassi).

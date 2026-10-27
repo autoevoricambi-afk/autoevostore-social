@@ -42,3 +42,8 @@
 - Verifica Shopify: tutti i prodotti citati 27/10-2/11 sono ACTIVE con scorta > 0. Nessun Selenia 0W-20 nei post.
 - Programmato il 26/10 da un'altra chat (1/11 12:30 e 18:30 storie, 2/11 12:30 storia, 2/11 18:30 Mannol 8118): utm_campaign diverso (autoevo_novembre_2026_v2), hashtag #AutoEvoStore (maiuscole diverse dal resto), storie 12:30 con testo non vuoto, storia 1/11 18:30 con illustrazione pacco al posto del "bilancio del mese". Non modificato nulla.
 - 2026-10-27 sync con ChatGPT: creato docs/SYNC_CHAT_CLAUDE.md (ruoli, convenzioni UTM/hashtag/chiusura). Verifica Metricool 22-24/11 (creati da chat il 26/10): 23/11 Petronas Syntium Prime AV gia' usato il 4/11 (+ carosello 9/10) -> viola le 8 settimane, da cambiare; utm_campaign "autoevo_novembre_2026_v2" e hashtag #AutoEvoStore da uniformare.
+
+## 2026-10-27 — audit FB/IG (Metricool + sessioni Shopify)
+- IG: follower 7 -> 8 dal 10/10 (nessun guadagno registrato); reach giornaliera 3-24, picco 24/10 (views 119, reach 100, 0 nuovi follower); reach feed per post 2-5; interazioni 0-2. Statistiche storie IG: nessun dato restituito da Metricool.
+- FB: pagina con 1 follower; reach per post 1-4, reazioni quasi 0; visualizzazioni pagina 0-50/giorno (picchi 13/10 e 26/10).
+- Sito (sessioni da social): ~1 in settembre -> 32 tra 6 e 26/10 (picco 12 il 14/10, giorno scheda Petronas XS). Ricerca 1-10/giorno. DM/WhatsApp non misurabili da Metricool.

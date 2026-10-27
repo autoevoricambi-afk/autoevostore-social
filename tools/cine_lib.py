@@ -2,6 +2,7 @@
 (luce volumetrica, pavimento lucido con riflesso, bokeh, bloom, grana). Niente scritte sovrapposte:
 solo il logo del brand. Parametri di scena: palette, posizione, altezza, seed."""
 import os, numpy as np, cv2
+from functools import lru_cache
 from PIL import Image
 from ae_lib import ROOT
 
@@ -14,6 +15,7 @@ PALETTES = {
 }
 
 
+@lru_cache(maxsize=16)
 def _fbm(h, w, seed, octaves=5, base=3):
     rng = np.random.default_rng(seed)
     out = np.zeros((h, w), np.float32); amp = 1.0; tot = 0
@@ -41,6 +43,10 @@ def _bottle(key, h):
     im = Image.open(f'{PR}/{key}.png').convert('RGBA')
     im = im.resize((max(2, int(im.width * h / im.height)), int(h)), Image.LANCZOS)
     a = np.asarray(im).astype(np.float32) / 255.0
+    al = a[..., 3]
+    al = cv2.erode(al, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)), iterations=1)
+    al = cv2.GaussianBlur(al, (0, 0), 0.8)
+    a[..., 3] = np.clip(al * 1.04, 0, 1)
     return a  # h,w,4 (non premoltiplicato)
 
 
@@ -57,15 +63,19 @@ def _paste(dst, src_rgb, src_a, x, y, mode='over', gain=1.0):
 
 
 def render(W, H, keys, palette='cyan', seed=3, cx=0.5, heights=None, xs=None, base_y=0.82,
-           logo_w=0.30, logo_top=0.03, tag=None, light='left', mood=1.0, depth_blur=True):
+           logo_w=0.34, logo_top=0.03, tag=None, light='left', mood=1.0, depth_blur=True, logo=True, logo_halo=0.74,
+           anim=None):
     """keys: lista di prodotti (1 = eroe, più = gruppo). heights: altezza in frazione di H per ciascuno.
-    xs: centri x in frazione di W. Restituisce PIL RGB."""
+    xs: centri x in frazione di W. anim (per i video): drift, sweep, spec_x, fade, grain. Restituisce PIL RGB."""
+    A = anim or {}
+    drift = A.get('drift', 0.0); sweep = A.get('sweep', 0.0); spec_x = A.get('spec_x', None)
+    fade_all = A.get('fade', 1.0); grain_seed = A.get('grain', seed + 99)
     P = PALETTES[palette]; ac = np.array(P['accent'], np.float32); ac2 = np.array(P['accent2'], np.float32)
     wm = np.array(P['warm'], np.float32)
     sgn = 1 if light == 'left' else -1
     hz = int(H * (base_y - 0.075)); yb = int(H * base_y)   # orizzonte e linea di appoggio
     heights = heights or [0.60] * len(keys)
-    xs = xs or ([cx] * len(keys))
+    xs = xs or ([cx] * max(1, len(keys)))
 
     # ---------- sfondo: gradiente + bagliore dietro il prodotto
     ys = np.linspace(0, 1, H, dtype=np.float32)[:, None, None]
@@ -78,7 +88,7 @@ def render(W, H, keys, palette='cyan', seed=3, cx=0.5, heights=None, xs=None, ba
 
     # ---------- fasci di luce volumetrica (da un lato) modulati da foschia
     cone = np.zeros((H, W), np.float32)
-    src = np.array([[-0.05 * W if sgn > 0 else 1.05 * W, -0.06 * H]])
+    src = np.array([[(-0.05 * W if sgn > 0 else 1.05 * W) + sgn * sweep * W * 0.5, -0.06 * H]])
     spread = 0.30 * W
     poly = np.array([[src[0][0] - sgn * 0.02 * W, -0.08 * H], [src[0][0] + sgn * 0.20 * W, -0.08 * H],
                      [gx + sgn * spread, yb + 0.02 * H], [gx - sgn * spread * 0.2, yb + 0.02 * H]], np.int32)
@@ -95,7 +105,7 @@ def render(W, H, keys, palette='cyan', seed=3, cx=0.5, heights=None, xs=None, ba
     rng = np.random.default_rng(seed)
     bok = np.zeros((H, W, 3), np.float32)
     for _ in range(16):
-        x = rng.uniform(0, W); y = rng.uniform(0.30 * H, hz * 0.97); r = rng.uniform(14, 46)
+        x = (rng.uniform(0, W) + drift * 0.4) % W; y = rng.uniform(0.30 * H, hz * 0.97); r = rng.uniform(14, 46)
         col = [ac, ac, ac2, np.array((0.9, 0.97, 1), np.float32), wm][rng.integers(0, 5)] * rng.uniform(0.05, 0.16)
         cv2.circle(bok, (int(x), int(y)), int(r), tuple(float(c) for c in col), -1, cv2.LINE_AA)
     bok = _blur(bok, 5.5)
@@ -137,7 +147,7 @@ def render(W, H, keys, palette='cyan', seed=3, cx=0.5, heights=None, xs=None, ba
     # ---------- particelle in primo piano / sospese
     pt = np.zeros((H, W, 3), np.float32)
     for _ in range(90):
-        x = rng.uniform(0, W); y = rng.uniform(0.05 * H, H * 0.95); r = rng.uniform(0.8, 2.6)
+        x = (rng.uniform(0, W) + drift * 0.15) % W; y = (rng.uniform(0.05 * H, H * 0.95) - drift * 1.1) % H; r = rng.uniform(0.8, 2.6)
         cv2.circle(pt, (int(x), int(y)), int(np.ceil(r)), (1, 1, 1), -1, cv2.LINE_AA)
     pt = _blur(pt, 0.9) * (0.15 + 0.35 * _fbm(H, W, seed + 21, 3, 4))[..., None]
     img += pt * (ac * 0.7 + 0.3) * 0.9 * mood
@@ -179,9 +189,9 @@ def render(W, H, keys, palette='cyan', seed=3, cx=0.5, heights=None, xs=None, ba
         ab = cv2.GaussianBlur(al, (0, 0), 3.0)
         gxl = cv2.Sobel(ab, cv2.CV_32F, 1, 0, ksize=3)
         rim_l = np.clip(-sgn * gxl, 0, None); rim_r = np.clip(sgn * gxl, 0, None)
-        edge = np.clip(rim_l, 0, 1)[..., None] * ac * 2.4 + np.clip(rim_r, 0, 1)[..., None] * ac2 * 1.6
+        edge = np.clip(rim_l, 0, 1)[..., None] * ac * 1.5 + np.clip(rim_r, 0, 1)[..., None] * ac2 * 1.1
         # lama di luce speculare verticale
-        sx = (0.30 if sgn > 0 else 0.70)
+        sx = spec_x if spec_x is not None else (0.30 if sgn > 0 else 0.70)
         spec = np.exp(-((np.linspace(0, 1, bw)[None, :] - sx) / 0.045) ** 2) * (0.35 + 0.65 * (1 - ys_))
         spec = spec * al
         # riflesso sul pavimento
@@ -217,18 +227,42 @@ def render(W, H, keys, palette='cyan', seed=3, cx=0.5, heights=None, xs=None, ba
     # ---------- finale: bloom lieve sulle alte luci, grana
     lum = img.mean(2, keepdims=True)
     hi = np.clip(img - 0.80, 0, None)
-    img = np.clip(img + _blur(hi, 14) * 0.9, 0, 1)
-    g = np.random.default_rng(seed + 99).normal(0, 0.012, (H, W, 1)).astype(np.float32)
+    img = np.clip(img + _blur(hi, 14) * 0.9, 0, 1) * fade_all
+    g = np.random.default_rng(grain_seed).normal(0, 0.012, (H, W, 1)).astype(np.float32)
     img = np.clip(img + g * (0.5 + 0.7 * (1 - lum)), 0, 1)
     out = Image.fromarray((img * 255).astype(np.uint8)).convert('RGBA')
 
-    # ---------- logo del brand (unica scritta) + dominio discreto
-    lg = Image.open(ROOT + '/assets/logo.png').convert('RGBA')
-    lw = int(W * logo_w); lg = lg.resize((lw, int(lg.height * lw / lg.width)), Image.LANCZOS)
-    out.alpha_composite(lg, ((W - lw) // 2, int(H * logo_top)))
+    # ---------- logo del brand (file originale) con retroilluminazione per leggere "AUTO EVO"
+    if logo:
+        out = add_logo(out, W, H, logo_w, logo_top, halo=logo_halo)
     if tag:
         from PIL import ImageDraw
         from ae_lib import font
         d = ImageDraw.Draw(out); f = font('Medium', int(W * 0.030)); t = tag
         w = d.textlength(t, font=f); d.text(((W - w) / 2, H - int(H * 0.045)), t, font=f, fill=(200, 215, 230, 170))
     return out.convert('RGB')
+
+
+def add_logo(out, W, H, logo_w=0.34, logo_top=0.03, halo=0.74, cx=0.5, alpha=1.0):
+    """Incolla il logo ufficiale (assets/logo.png). Le lettere 'AUTO EVO' sono grigio scuro: sotto metto una
+    luce morbida (backlight) così si staccano dal fondo senza toccare il file."""
+    lg = Image.open(ROOT + '/assets/logo.png').convert('RGBA')
+    bb = lg.getbbox(); lg = lg.crop(bb)
+    lw = int(W * logo_w); lh = int(lg.height * lw / lg.width)
+    lg = lg.resize((lw, lh), Image.LANCZOS)
+    x = int(W * cx - lw / 2); y = int(H * logo_top)
+    if halo > 0:
+        yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+        ccx, ccy = x + lw / 2, y + lh * 0.585
+        d = ((xx - ccx) / (lw * 0.56)) ** 2 + ((yy - ccy) / (lh * 0.20)) ** 2
+        hl = np.exp(-d * 1.15)
+        hl = cv2.GaussianBlur(hl, (0, 0), lh * 0.05)
+        col = np.array((0.80, 0.92, 1.0), np.float32)
+        base = np.asarray(out.convert('RGB')).astype(np.float32) / 255.0
+        base = np.clip(base + hl[..., None] * col * halo * alpha, 0, 1)
+        out = Image.fromarray((base * 255).astype(np.uint8)).convert('RGBA')
+    if alpha < 1.0:
+        la = np.asarray(lg.split()[3]).astype(np.float32) * alpha
+        lg.putalpha(Image.fromarray(la.astype(np.uint8)))
+    out.alpha_composite(lg, (x, y))
+    return out

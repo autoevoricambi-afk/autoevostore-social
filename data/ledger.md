@@ -47,3 +47,10 @@
 - IG: follower 7 -> 8 dal 10/10 (nessun guadagno registrato); reach giornaliera 3-24, picco 24/10 (views 119, reach 100, 0 nuovi follower); reach feed per post 2-5; interazioni 0-2. Statistiche storie IG: nessun dato restituito da Metricool.
 - FB: pagina con 1 follower; reach per post 1-4, reazioni quasi 0; visualizzazioni pagina 0-50/giorno (picchi 13/10 e 26/10).
 - Sito (sessioni da social): ~1 in settembre -> 32 tra 6 e 26/10 (picco 12 il 14/10, giorno scheda Petronas XS). Ricerca 1-10/giorno. DM/WhatsApp non misurabili da Metricool.
+
+## 2026-10-27 — controllo contenuti creati da ChatGPT (testi/metadati Metricool; immagini non visionabili da qui)
+- Controllati 3-6/11, 22-30/11. Prodotti ACTIVE con scorta OK.
+- Da correggere: Petronas Prime AV 23/11 (gia' 4/11, stessa grafica); Castrol Magnatec 5W-30 A5 26/11 (gia' 12/11); storia 25/11 = stessa grafica della 5/11; titolo "Il prossimo tagliando comincia qui" 6/11 e 25/11; tema "Due oli. Un dubbio?" 29/11 gia' usato a fine ottobre.
+- Fatto non verificato: storia 6/11 "dopo la spedizione ricevi via email il codice di tracciamento" (non nel runbook: togliere o far confermare al titolare).
+- Buchi: nessun feed 22/11 (domenica) e 28/11 (sabato); dal 22/11 solo storie 12:30 (manca la seconda storia).
+- Alt text generici ("Campagna novembre: hero/story/assistance"); hashtag solo 3 e uguali su tutti i post; UTM campaign v2 diversa dal resto.

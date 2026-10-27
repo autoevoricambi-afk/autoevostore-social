@@ -36,3 +36,8 @@
 - Metricool: programmazione presente fino al 21/11 (27 giorni davanti a oggi, soglia 21): nessun nuovo contenuto creato. Prossimo giorno scoperto: 22/11 (da coprire domenica 1/11 o 8/11 per restare sopra i 21 giorni).
 - Numeri IG feed 9-24/10 (14 post): reach organica 2-5 per post, interazioni 0-2, 0 salvataggi, 0 condivisioni. Storico ancora troppo scarso per scegliere formati/temi: nessuna conclusione (caroselli 2-4 di reach, schede 2-5: differenze non significative).
 - Bilancio del mese: domenica 1/11 — prepararlo con dati reali solo se sufficienti (ad oggi i volumi sono molto bassi).
+
+## 2026-10-27 — controllo contenuti e stile grafico
+- Il titolare preferisce lo stile "cine" del pacchetto pilota (commit 9a95448: foto in scena, titoli grandi, luce) al template blu uniforme (cal_lib/photo_lib), giudicato sempre identico. Da adottare come nuovo standard (tools/cine_lib.py, cine_type.py, gen_pilot_*.py).
+- Verifica Shopify: tutti i prodotti citati 27/10-2/11 sono ACTIVE con scorta > 0. Nessun Selenia 0W-20 nei post.
+- Programmato il 26/10 da un'altra chat (1/11 12:30 e 18:30 storie, 2/11 12:30 storia, 2/11 18:30 Mannol 8118): utm_campaign diverso (autoevo_novembre_2026_v2), hashtag #AutoEvoStore (maiuscole diverse dal resto), storie 12:30 con testo non vuoto, storia 1/11 18:30 con illustrazione pacco al posto del "bilancio del mese". Non modificato nulla.

@@ -10,6 +10,9 @@ Archivio di lavoro per i social di AUTO EVO STORE (autoevostore.it, solo oli e l
 - Non toccare eBay. Non attivare prodotti in bozza su Shopify. Non scrivere "sostituzione gratuita".
 - Se un fatto tecnico non è verificabile da titolo/tag Shopify o da fonte ufficiale, NON scriverlo.
 
+## PRIORITÀ dal 1/11/2026: Reel prodotto
+Leggi `docs/STRATEGIA_REEL.md`. Il formato con più visualizzazioni è il Reel di UN prodotto (tools/reel_prodotto.py): un Reel prodotto al giorno nello slot feed, a rotazione su tutti i prodotti attivi; max 5 hashtag; IG -> link in bio (https://www.autoevostore.it/pages/link), FB -> link scheda prodotto con UTM. Piano in `data/reel_prodotto_plan.json`.
+
 ## Ritmo (analisi Metricool 9 ott): ogni giorno 1 feed + 2 momenti storie (12:30 e 18:30, sequenze di 3-4 storie: problema, spiegazione, prodotto, CTA DM). A settimana: 3 Reel, 2 caroselli educativi, 1 contenuto di fiducia. Pilastri: educazione, fiducia, prodotto, conversione. Mai affermare compatibilità dalla sola viscosità: citare l'omologazione e invitare a mandare targa/modello/anno in DM.
 
 ## Ritmo di base (1 feed + 1 storia al giorno, tutti i giorni)

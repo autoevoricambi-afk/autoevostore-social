@@ -66,3 +66,10 @@
 - Controllo link FB (Metricool) 2-30/11: trovati 3 link rotti (404) verso collezioni inesistenti e corretti: collections/olio-cambio-e-differenziale -> olio-trasmissione-differenziale (FB 10/11 carosello, 18/11 reel, 30/11 reel); collections/piu-venduti -> best-seller (FB 27/11 reel). Su quei post utm_campaign allineato a autoevo_ott_nov_2026. Tutti i link prodotto verificati contro gli handle Shopify ACTIVE: ok.
 - Instagram: nessun link cliccabile possibile in didascalie/reel; storie senza sticker link (non programmabile via Metricool). Resta valido: link in bio + sticker link manuale.
 - Aperti (non toccati): duplicati 23/11 e 26/11, buchi feed 22/11 e 28/11, grafiche in stile "cine".
+
+## 2026-11-01 notte — svolta Reel prodotto (richiesta del titolare)
+- Dati Metricool Reel IG set-ott: GM dexos2 5W-30 5 L (23/10) 126 views / reach 115 (FB 25 views); altri Reel 21-30 views IG, 0-4 FB. Formato vincente: UN prodotto, foto reali, dettaglio->intero.
+- Ricerca Ferrari/Porsche/Petronas/algoritmo IG (vedi docs/STRATEGIA_REEL.md): gancio 0-3 s, un dettaglio alla volta, serie riconoscibili, condivisioni DM, max 5 hashtag (limite IG da dic 2025), Trial Reels solo da 1.000 follower.
+- Nuovo motore tools/reel_prodotto.py (13 s, 1080x1920, audio originale) -> media/reels-prodotto/<chiave>.mp4/.jpg per 26 prodotti ACTIVE con scorta. Piano: data/reel_prodotto_plan.json (9/11-14/12, IG e FB separati, FB con link scheda prodotto + UTM).
+- Grafiche cinematografiche nuove (tools/gen_cine_nov2.py, media/2026-11c): 8/11 domanda, 15/11 vero/falso, 17/11 reso 14 giorni, 29/11 "che auto guidi" -> aggiornati su Metricool IG+FB con link pagine (omologazioni, guida sigle, verifica compatibilita', scheda Ineo MC3).
+- Deroga 8 settimane: il titolare ha chiesto Reel per TUTTI i prodotti; prodotti gia' usati in ottobre tornano in formato Reel con gancio nuovo.

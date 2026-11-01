@@ -109,7 +109,7 @@ def darken(arr, k): return (arr.astype(np.float32) * k).astype(np.uint8)
 def build(key):
     foto, pa, pb, hook, kicker, name, specs, handle, _ = P[key]
     seed = sum(map(ord, key)) % 97
-    A = np.asarray(render(1620, 2880, [foto], palette=pa, heights=[0.56], xs=[0.5], cx=0.5, base_y=0.84, logo=False, seed=seed).convert('RGB'))
+    A = np.asarray(render(1620, 2880, [foto], palette=pa, heights=[0.50], xs=[0.5], cx=0.5, base_y=0.88, logo=False, seed=seed).convert('RGB'))
     B = np.asarray(render(1242, 2208, [foto], palette=pb, heights=[0.50], xs=[0.73], cx=0.73, base_y=0.83, light='right',
                           logo=False, seed=seed + 7).convert('RGB'))
     # livelli di testo precalcolati
@@ -146,12 +146,12 @@ def build(key):
         t = i / FPS
         if t < CUT[0]:                         # gancio: macro etichetta che si allarga
             p = t / CUT[0]
-            im = Image.fromarray(top_grad(crop_resize(A, 0.5, 0.60, 0.50 + 0.10 * ease(p)))).convert('RGBA')
+            im = Image.fromarray(top_grad(crop_resize(A, 0.5, 0.64, 0.46 + 0.10 * ease(p)))).convert('RGBA')
             im.alpha_composite(Image.fromarray(np.zeros((H, W, 4), np.uint8)))
             comp(im, L_hook, 1.0 if t > 0.08 else t / 0.08, rise=0)
         elif t < CUT[1]:                       # intero: push-in
             p = (t - CUT[0]) / (CUT[1] - CUT[0])
-            im = Image.fromarray(crop_resize(A, 0.5, 0.52, 1.0 - 0.10 * ease(p))).convert('RGBA')
+            im = Image.fromarray(crop_resize(A, 0.5, 0.54, 1.0 - 0.08 * ease(p))).convert('RGBA')
             im = add_logo(im, W, H, 0.30, 0.05)
             comp(im, L_kick, seg(t, CUT[0] + 0.15, CUT[0] + 0.6)); comp(im, L_name, seg(t, CUT[0] + 0.4, CUT[0] + 1.0))
         elif t < CUT[2]:                       # sigle

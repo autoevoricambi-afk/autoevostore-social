@@ -29,6 +29,11 @@
 - I contenuti di domanda, carosello e consiglio restano 2-3 volte a settimana. Le storie 12:30 e 19:00 rilanciano il Reel del giorno: aggiungere a mano dall'app lo sticker link alla scheda.
 - Piano attuale: `data/reel_prodotto_plan.json` (9/11-14/12).
 
+## Ecosistema (un solo stile cinematografico ovunque)
+- **Feed:** Reel prodotto (tools/reel_prodotto.py), Reel di serie (tools/reel_serie.py: "Stesso 5W-30/5W-40, sigle diverse", "ACEA C2 o C3?", "Non è tutto olio motore", "Dal magazzino a te"). Le domande e i post di fiducia sono fatti con tools/gen_cine_nov2.py.
+- **Storie (tools/gen_ecosistema.py):** alle 12:30 il teaser del Reel della sera, alle 19:00 il riepilogo "Le sigle in etichetta" + DM. Nei giorni senza Reel prodotto: una storia di servizio (BRT, Europa, reso, assistenza, link in bio) + "rispondi al post di oggi".
+- **Ogni contenuto rimanda agli altri:** dalla storia al Reel, dal Reel al DM e al link in bio, da lì alla scheda prodotto.
+
 ## Serie ricorrenti (prossimi sviluppi)
 1. **Leggi l'etichetta:** una sigla spiegata a partire dal flacone reale.
 2. **Che sigla è?:** si mostra un dettaglio parziale, la risposta arriva alla fine del Reel.

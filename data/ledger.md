@@ -76,3 +76,10 @@
 - PROGRAMMATI su Metricool (IG REEL + FB REEL separati, FB con link scheda prodotto+UTM): 9/11 WR Forward, 12/11 Magnatec A5, 14/11 Digitek 0W-30, 16/11 WR Diesel, 19/11 Mannol LL, 20/11 WR Pure Energy, 21/11 Ineo MC3, 22/11 Multipower Gas (nuovo, copre il buco), 23/11 Selenia 20K (sostituisce il doppione Petronas AV), 25/11 Magnatec Prof D, 26/11 EDGE Turbo Diesel (sostituisce il doppione Magnatec A5), 28/11 EDGE 0W-20 (nuovo, copre il buco), 1/12 Petronas XS, 2/12 EDGE LL III, 3/12 Mobil 1 ESP, 4/12 Transmax, 5/12 Power 1 2T, 6/12 K Pure Energy, 7/12 Petronas AV.
 - DA PROGRAMMARE alla prossima routine (Reel gia' pronti in media/reels-prodotto, payload in data/reel_prodotto_plan.json): 8/12 BMW LL-04, 9/12 Mannol 8118, 10/12 GM dexos2, 11/12 EDGE 0W-30 LL, 12/12 Outboard 7207, 13/12 Mannol ATF, 14/12 Magnatec 0W-30 D. Storie dicembre ancora da fare.
 - Benchmark da battere: 126 views IG (GM dexos2 23/10). Domenica 15/11: confrontare views/retention dei Reel 9-14/11.
+
+## 2026-11-01 notte — ecosistema completo 8/11-14/12 (richiesta del titolare)
+- Reel di serie (tools/reel_serie.py, media/reels-serie): 13/11 "ACEA C2 o C3?", 18/11 "Non è tutto olio motore", 24/11 "Stesso 5W-30, sigle diverse", 27/11 "Dal magazzino a te" (BRT, Europa, reso, assistenza), 30/11 "Stesso 5W-40, sigle diverse" -> sostituiscono i Reel generici (stile diverso) su IG e FB; FB con link a guida sigle / omologazioni / collezione cambio-differenziale / pagina link.
+- Storie cinematografiche (tools/gen_ecosistema.py, media/stories-cine, piano data/ecosistema_plan.json): 74 storie FB+IG, 12:30 e 19:00 ogni giorno 8/11-14/12. Logica: giorno Reel -> 12:30 teaser "Stasera alle 18:30" + 19:00 "Le sigle in etichetta"; sabato (Reel 12:00) -> 12:30 sigle + 19:00 servizio; domande/caroselli -> servizio + "rispondi al post". 19 aggiornate, 55 create.
+- Reel prodotto 8-14/12 creati (14 post). Outboard 12/12: caption corretta per nautica (non "auto/tagliando").
+- Verifica: ogni giorno 8/11-14/12 ha storia 12:30 + 19:00 + feed IG/FB. Restano dello stile vecchio solo i caroselli 10/11 e 11/11 e i contenuti 2-7/11.
+- Prossimo giorno scoperto: 15/12.

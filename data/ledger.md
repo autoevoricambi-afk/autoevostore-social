@@ -54,3 +54,9 @@
 - Fatto non verificato: storia 6/11 "dopo la spedizione ricevi via email il codice di tracciamento" (non nel runbook: togliere o far confermare al titolare).
 - Buchi: nessun feed 22/11 (domenica) e 28/11 (sabato); dal 22/11 solo storie 12:30 (manca la seconda storia).
 - Alt text generici ("Campagna novembre: hero/story/assistance"); hashtag solo 3 e uguali su tutti i post; UTM campaign v2 diversa dal resto.
+
+## 2026-11-01 (domenica) — controllo copertura
+- Metricool: programmazione presente fino al 30/11 (29 giorni davanti a oggi, soglia 21): nessun nuovo contenuto creato in questo giro. Prossimo giorno scoperto: 1/12 (da coprire domenica 8/11 o 15/11).
+- Numeri IG ottobre (dati giornalieri Metricool): follower 7 -> 8 (nessun guadagno nel mese), reach account 0-24 al giorno (picco 24/10: views 119, reach 100, 0 nuovi follower), 0 salvataggi e 0 condivisioni sui feed, interazioni 0-2. Nessuna conclusione su formati/temi: volumi troppo bassi.
+- "Bilancio del mese" NON programmato: dati insufficienti (come da regola).
+- Problemi gia' segnalati il 27/10 ancora aperti nel calendario creato da altra chat: Petronas Prime AV 23/11 (gia' usato il 4/11), Magnatec A5 26/11 (gia' 12/11), buchi feed 22/11 e 28/11, seconda storia mancante dal 22/11, UTM v2 e hashtag diversi. Non modificati senza conferma del titolare.
